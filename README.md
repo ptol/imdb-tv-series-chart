@@ -1,0 +1,9 @@
+Chrome: [https://chrome.google.com/webstore/detail/imdb-tv-series-chart/iallhoomcfnppkafmgoncnabadhknhjb](https://chrome.google.com/webstore/detail/imdb-tv-series-chart/iallhoomcfnppkafmgoncnabadhknhjb)
+
+Firefox: [https://addons.mozilla.org/ru/firefox/addon/imdb-tv-series-chart/](https://chrome.google.com/webstore/detail/imdb-tv-series-chart/iallhoomcfnppkafmgoncnabadhknhjb)
+
+![](https://i.imgur.com/gZE6bZD.png)
+
+![](https://i.imgur.com/mbwAZXn.png)
+
+
