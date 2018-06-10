@@ -1,0 +1,21 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "noImplicitAny": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "forceConsistentCasingInFileNames": true,
+    "strictNullChecks": true,
+    "baseUrl": "./src",
+    "outDir": "./dist/js",
+    "pretty": true,
+    "lib": ["es6", "dom", "es2015.promise"]
+  },
+  "include": [
+    "./src/**/*"
+  ]
+}
