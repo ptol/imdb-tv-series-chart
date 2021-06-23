@@ -1,9 +1,9 @@
 import {Season} from "./data"
 import * as Highcharts from "highcharts"
 import {Options} from "highcharts"
-import {PageParser} from "./pageParser"
-import regression = require('regression')
-import _ = require("lodash")
+import regression = require('regression');
+import _ = require("lodash");
+import {State} from "./state";
 
 const chartHeight = 500
 const seasonColors = [
@@ -68,7 +68,6 @@ export module Chart {
             point: {
                 events: {
                     click: function (x: any) {
-                        console.log(x.point)
                         if (x.point.url)
                             window.open(x.point.url)
                     }
@@ -115,7 +114,7 @@ export module Chart {
                 }
             },
             title: {
-                text: PageParser.getTitle()
+                text: State.title
             },
             series: seasonCharts.concat(regressionCharts as any)
         }

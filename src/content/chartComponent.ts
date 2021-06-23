@@ -7,8 +7,8 @@ export module ChartComponent {
 
     const containerId = "tv-ratings-chart"
     const btnId = "tv-ratings-chart-btn"
-    const buttonHtml = `
-           <a id="tv-ratings-chart-btn" href="#" style="width: 200px;" class="bp_item np_episode_guide"> 
+    const oldPageButtonHtml = `
+           <a id="${btnId}" href="#" style="width: 200px;" class="bp_item np_episode_guide"> 
                <div class="bp_content">
                     <div class="bp_description">
                         <div class="bp_heading">Episode Ratings Chart</div>
@@ -16,18 +16,24 @@ export module ChartComponent {
                </div>
            </a>
         `
-    const modalHtml = `
+  const newPageButtonHtml = `
+        <a id="${btnId}" href="#" style="margin-right:20px" role="button" aria-label="View episode guide" data-testid="hero-subnav-bar-series-episode-guide-link" class="EpisodeNavigationForTVSeries__EpisodeGuideLink-xpwkcg-0 loXKdf"><span role="presentation" class="EpisodeNavigationForTVSeries__EpisodeGuideText-xpwkcg-1 ifMheD episode-guide-text">Episode ratings chart</span></a>`
+  const modalHtml = `
             <div id="${containerId}-modal" style="display:none;z-index: 9999; height: 530px; max-width:80%;">
                 <div id="${containerId}">
-                    <div class="loading_spinner" style="margin-top: 230px"></div>
+                    <div class="ipc-watchlist-ribbon__icon"  style="margin-top: 230px" role="presentation"><svg class="ipc-loader ipc-loader--circle ipc-watchlist-ribbon__loader" width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg"><g class="ipc-loader__container" fill="currentColor"><circle class="ipc-loader__circle ipc-loader__circle--one" cx="24" cy="9" r="4"></circle><circle class="ipc-loader__circle ipc-loader__circle--two" cx="35" cy="14" r="4"></circle><circle class="ipc-loader__circle ipc-loader__circle--three" cx="39" cy="24" r="4"></circle><circle class="ipc-loader__circle ipc-loader__circle--four" cx="35" cy="34" r="4"></circle><circle class="ipc-loader__circle ipc-loader__circle--five" cx="24" cy="39" r="4"></circle><circle class="ipc-loader__circle ipc-loader__circle--six" cx="13" cy="34" r="4"></circle><circle class="ipc-loader__circle ipc-loader__circle--seven" cx="9" cy="24" r="4"></circle><circle class="ipc-loader__circle ipc-loader__circle--eight" cx="13" cy="14" r="4"></circle></g></svg></div>
                 </div>
             </div>
         `
 
 
     export function init() {
-
+      const buttonHtml = State.isNewPage ? newPageButtonHtml : oldPageButtonHtml
+      if(State.isNewPage){
+        $("[class^='SubNav__SubNavContentBlock']:first").prepend(buttonHtml)
+      }else{
         $(".button_panel.navigation_panel").append(buttonHtml)
+      }
         $("body").append(modalHtml)
 
         $("#" + btnId).on("click", async () => {
