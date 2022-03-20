@@ -3,7 +3,7 @@ import * as $ from "jquery"
 export module NewPageParser {
 
     export function getSeasonsCount() {
-        const container = $("[class^='BrowseEpisodes__BrowseEpisodesContainer']")
+        const container = $(".episodes-browse-episodes")
         const lastSeason = $( "[for='browse-episodes-season']", container).text() || $(".ipc-button__text:eq(1)", container).text()
 
         return parseInt(lastSeason.replace(/\D/, ''))

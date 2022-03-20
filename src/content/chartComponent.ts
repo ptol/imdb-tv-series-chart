@@ -17,7 +17,7 @@ export module ChartComponent {
            </a>
         `
   const newPageButtonHtml = `
-        <a id="${btnId}" href="#" style="margin-right:20px" role="button" aria-label="View episode guide" data-testid="hero-subnav-bar-series-episode-guide-link" class="EpisodeNavigationForTVSeries__EpisodeGuideLink-xpwkcg-0 loXKdf"><span role="presentation" class="EpisodeNavigationForTVSeries__EpisodeGuideText-xpwkcg-1 ifMheD episode-guide-text">Episode ratings chart</span></a>`
+        <a id="${btnId}" href="#chart" style="margin-right:20px" role="button" class="sc-89e7233a-0 jXxVEl"><span role="presentation" class="sc-89e7233a-1 dWZpw episode-guide-text"><span>Episode ratings chart</span></a>`
   const modalHtml = `
             <div id="${containerId}-modal" style="display:none;z-index: 9999; height: 530px; max-width:80%;">
                 <div id="${containerId}">
@@ -30,7 +30,7 @@ export module ChartComponent {
     export function init() {
       const buttonHtml = State.isNewPage ? newPageButtonHtml : oldPageButtonHtml
       if(State.isNewPage){
-        $("[class^='SubNav__SubNavContentBlock']:first").prepend(buttonHtml)
+        $("[data-testid='hero-subnav-bar-left-block']").prepend(buttonHtml)
       }else{
         $(".button_panel.navigation_panel").append(buttonHtml)
       }
