@@ -17,7 +17,7 @@ export module ChartComponent {
            </a>
         `
   const newPageButtonHtml = `
-        <a id="${btnId}" href="#chart" style="margin-right:20px" role="button" class="sc-89e7233a-0 jXxVEl"><span role="presentation" class="sc-89e7233a-1 dWZpw episode-guide-text"><span>Episode ratings chart</span></a>`
+        <a id="${btnId}" href="#chart" style="margin-right:20px;color:var(--ipt-on-baseAlt-textPrimary-color);text-decoration:underline dashed" role="button"  class="sc-89e7233a-0 jXxVEl">Episode ratings chart</a>`
   const modalHtml = `
             <div id="${containerId}-modal" style="display:none;z-index: 9999; height: 530px; max-width:80%;">
                 <div id="${containerId}">

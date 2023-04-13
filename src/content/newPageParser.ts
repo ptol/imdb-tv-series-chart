@@ -4,7 +4,7 @@ export module NewPageParser {
 
     export function getSeasonsCount() {
         const container = $(".episodes-browse-episodes")
-        const lastSeason = $( "[for='browse-episodes-season']", container).text() || $(".ipc-button__text:eq(1)", container).text()
+        const lastSeason = $( "[for='browse-episodes-season']", container).text() || container.length.toString()
 
         return parseInt(lastSeason.replace(/\D/, ''))
     }
