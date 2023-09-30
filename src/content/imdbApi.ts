@@ -20,7 +20,7 @@ export module ImdbApi {
                 rating: x.aggregateRating,
                 votes: x.voteCount
             }
-        })
+        }).filter(x => Boolean(x.rating))
         return {episodes, number}
     }
 
