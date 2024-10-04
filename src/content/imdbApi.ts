@@ -8,7 +8,7 @@ export module ImdbApi {
 
     export async function getSeasonData(buildId: string, number: number) {
         const response = await fetch(
-        `${root}_next/data/${buildId}/title/${State.movieId}/episodes.json?season=${number}&tconst=${State.movieId}`)
+        `${root}_next/data/${buildId}/en-US/title/${State.movieId}/episodes.json?season=${number}&tconst=${State.movieId}`)
         const json = await response.json()
         const episodesData: any[] = json.pageProps.contentData.section.episodes.items
         const episodes = episodesData.map((x:any) => {

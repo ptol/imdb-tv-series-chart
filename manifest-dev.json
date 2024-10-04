@@ -3,7 +3,7 @@
 
   "name": "IMDb TV Series Chart",
   "description": "IMDb TV Series Chart",
-  "version": "0.10",
+  "version": "0.9",
   
   "icons": {
     "48": "icon_48.png",
@@ -17,6 +17,8 @@
       "css": ["css/jquery.modal.min.css", "css/style.css"]
     }
   ],
+
+  "background": { "scripts": ["hot-reload.js"] },
 
   "permissions": [
     "https://www.imdb.com/*"
