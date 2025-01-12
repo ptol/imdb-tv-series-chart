@@ -19,5 +19,10 @@
   ],
   "host_permissions": [
     "https://www.imdb.com/"
-  ]
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{094bc22d-3d96-4106-87c1-496684338691}"
+    }
+  }
 }
