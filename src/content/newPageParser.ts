@@ -3,7 +3,7 @@ import * as $ from "jquery"
 export module NewPageParser {
 
     export function getSeasonsCount() {
-        const container = $(".episodes-browse-episodes")
+        const container = $("[data-testid='episodes-browse-episodes']")
         const lastSeason = $( "[for='browse-episodes-season']", container).text() || container.length.toString()
 
         return parseInt(lastSeason.replace(/\D/, ''))
