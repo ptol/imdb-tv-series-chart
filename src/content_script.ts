@@ -9,7 +9,7 @@ import {NewPageParser} from "./content/newPageParser";
 $(() => {
 
     function getMovieId() {
-        const url = window.location.href
+        const url = window.location.pathname + "/"
         const extractId = /title\/(.*)\//
         return extractId.exec(url)![1]
     }

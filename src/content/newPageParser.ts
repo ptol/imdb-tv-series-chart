@@ -3,16 +3,18 @@ import * as $ from "jquery"
 export module NewPageParser {
 
     export function getSeasonsCount() {
+        const $spotlight = $('[data-testid="episode-ratings-spotlight"]')
+        const hasSpotlight = $spotlight.length > 0
         const lastSeasonNumber = Number(
-          $('[data-testid="episode-ratings-spotlight"]')
+          $spotlight
             .find('ul[role="tablist"] > li[role="tab"]')
             .last()
             .text()
             .trim()
             .replace(/^S/, '')
         );
-        if(lastSeasonNumber > 0) {
-            return lastSeasonNumber
+        if(hasSpotlight) {
+            return lastSeasonNumber > 0 ? lastSeasonNumber : 1;
         }
 
         const container = $("[data-testid='episodes-browse-episodes']")
